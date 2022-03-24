@@ -1,6 +1,6 @@
 import dbConnect from "../../utils/dbConnnect";
 
-dbConnect();
+await dbConnect();
 
 export default async (req,res)=>{
     res.json({test: 'test'})
