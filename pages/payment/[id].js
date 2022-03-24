@@ -2,8 +2,12 @@ import MainLayout from "../../components/layout";
 import Link from "next/link"
 import axios from "axios";
 import {useState}  from "react";
+import dbConnect from "../../utils/mongo";
+import products from "../../models/product";
+import order from "../../models/order";
 
 export const getServerSideProps = async ({params}) => {
+  await dbConnect();
     const res = await axios.get(`http://localhost:3000/api/order/id/${params.id}`)
     // const best = await  sql_query('SELECT * FROM kriyathor2 ORDER BY sold_produk DESC LIMIT 6')
     // let databest = JSON.parse(JSON.stringify(best))

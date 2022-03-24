@@ -8,8 +8,12 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
 SwiperCore.use([Autoplay, Pagination, Navigation]);
+import dbConnect from "../../utils/mongo";
+import products from "../../models/product";
+import order from "../../models/order";
 
 export const getServerSideProps = async ({params}) => {
+  await dbConnect();
   const res = await axios.get(`http://localhost:3000/api/product/id/${params.id}`)
   const type = res.data.type
   console.log(type);

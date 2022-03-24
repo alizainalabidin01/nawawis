@@ -3,6 +3,9 @@ import Slider from "../components/slider";
 // import { sql_query } from "../lib/db.js"
 import Link from "next/link"
 import axios from "axios";
+import dbConnect from "../utils/mongo";
+import products from "../models/product";
+import order from "../models/order";
 
 export default function Home({dataorder}) {
     
@@ -39,6 +42,7 @@ export default function Home({dataorder}) {
 }
 
 export const getServerSideProps = async () => {
+    await dbConnect();
     const res = await axios.get("http://localhost:3000/api/order")
     // const best = await  sql_query('SELECT * FROM kriyathor2 ORDER BY sold_produk DESC LIMIT 6')
     // let databest = JSON.parse(JSON.stringify(best))

@@ -3,7 +3,9 @@ import Slider from "../components/slider";
 // import { sql_query } from "../lib/db.js"
 import Link from "next/link"
 import axios from "axios";
-
+import dbConnect from "../utils/mongo";
+import products from "../models/product";
+import order from "../models/order";
 export default function Home({datanew, databest, dataall}) {
   return (
     <MainLayout>
@@ -73,6 +75,7 @@ export default function Home({datanew, databest, dataall}) {
 }
 
 export const getServerSideProps = async () => {
+    await dbConnect();
     const new1 = await axios.get("http://localhost:3000/api/product/newarrival")
     const best = await axios.get("http://localhost:3000/api/product/bestseller")
     const all = await axios.get("http://localhost:3000/api/product")
