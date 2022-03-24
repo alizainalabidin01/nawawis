@@ -1,12 +1,14 @@
+import Link from 'next/link'
+
 const Footer = () => {
     return (
       <footer className="shadow-md">
         <div className="flex flex-col bg-[#f3f1ed] p-8 sm:flex-row">
           <div className="flex flex-col gap-5 items-center text-center sm:gap-10 sm:items-start sm:flex-row">
             <div className="mx-8">
-              <a href="/">
+              <Link href="/">
                 <span className="w-24"> Nawawis Boutique</span>
-              </a>
+              </Link>
             </div>
   
             <div className="text-sm text-center">

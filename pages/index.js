@@ -13,7 +13,7 @@ export default function Home({datanew, databest, dataall}) {
         <div>
           <div className="grid grid-cols-2 md:grid-cols-3 justify-center">
           {datanew.map((item)=>
-            <Link href={'/detail/' + item._id} key={item._id}><a>
+            <Link href={'/detail/' + item._id} key={item._id}>
               <div className="flex flex-col gap-2 p-1 my-1 font-['sans-serif'] text-xs bg-white hover:bg-[#f5eddc]">
                 <div className="flex flex-col gap-2">
                   <img className="object-contain" src={item.img} />
@@ -23,7 +23,7 @@ export default function Home({datanew, databest, dataall}) {
                   <div className=" flex flex-row w-min  my-2 rounded-xl text-xs ">{"Rp."+item.price[0].toLocaleString()}
                   </div>
                 </div>
-              </div> </a>
+              </div> 
             </Link>)}
           </div>
         </div>
