@@ -23,7 +23,7 @@ function Navbar() {
                 </Link> */}
                 <Link href='/cart'>
                   <a className="cursor-pointer hover:bg-gray-500 text-black hover:text-white px-1 py-1 text-xm md:px-3 md:py-2 rounded-md md:text-sm font-medium" >
-                  <i classname="fa-solid fa-bag-shopping"></i>
+                  <i className="fa-solid fa-bag-shopping"></i>
                   </a>
                 </Link>
                 {/* <Link href='/'>
