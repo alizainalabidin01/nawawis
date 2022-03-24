@@ -1,4 +1,4 @@
-import MainLayout from "../components/Layout";
+import MainLayout from "../components/layout";
 import Slider from "../components/slider";
 // import { sql_query } from "../lib/db.js"
 import Link from "next/link"
