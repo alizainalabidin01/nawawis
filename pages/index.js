@@ -83,9 +83,9 @@ export const getServerSideProps = async () => {
     // let databest = JSON.parse(JSON.stringify(best))
     return {
       props : {
-        datanew : new1.data,
-        databest : best.data,
-        dataall : all.data
+        datanew : JSON.parse(JSON.stringify(new1)),
+        databest : JSON.parse(JSON.stringify(best)),
+        dataall : JSON.parse(JSON.stringify(all))
       }
     };
 
