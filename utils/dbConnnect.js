@@ -6,7 +6,7 @@ async function dbConnect() {
     if(connection.isConnected){
         return;
     }
-    const db = await mongoose.connect(process.env.MONGO_URL,{
+    const db = await mongoose.connect("mongodb+srv://zayn:Sharinggan@zayn.j1lli.mongodb.net/nawawis?retryWrites=true&w=majority",{
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
