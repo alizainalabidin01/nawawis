@@ -3,8 +3,8 @@ import Link from "next/link"
 import axios from "axios";
 import {useState}  from "react";
 import dbConnect from "../../utils/mongo";
-import products from "../../models/product";
-import order from "../../models/order";
+// import products from "../../models/product";
+// import order from "../../models/order";
 
 export const getServerSideProps = async ({params}) => {
   await dbConnect();

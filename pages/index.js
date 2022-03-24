@@ -4,8 +4,8 @@ import Slider from "../components/slider";
 import Link from "next/link"
 import axios from "axios";
 import dbConnect from "../utils/mongo";
-import products from "../models/product";
-import order from "../models/order";
+// import products from "../models/product";
+// import order from "../models/order";
 export default function Home({datanew, databest, dataall}) {
   return (
     <MainLayout>
@@ -75,7 +75,7 @@ export default function Home({datanew, databest, dataall}) {
 }
 
 export const getServerSideProps = async () => {
-    await dbConnect();
+  await dbConnect();
     const new1 = await axios.get("http://localhost:3000/api/product/newarrival")
     const best = await axios.get("http://localhost:3000/api/product/bestseller")
     const all = await axios.get("http://localhost:3000/api/product")
@@ -83,9 +83,9 @@ export const getServerSideProps = async () => {
     // let databest = JSON.parse(JSON.stringify(best))
     return {
       props : {
-        datanew : JSON.parse(JSON.stringify(new1)),
-        databest : JSON.parse(JSON.stringify(best)),
-        dataall : JSON.parse(JSON.stringify(all))
+        datanew : new1.data,
+        databest : best.data,
+        dataall : all.data
       }
     };
 

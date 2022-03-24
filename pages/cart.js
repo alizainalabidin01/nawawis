@@ -4,8 +4,8 @@ import Slider from "../components/slider";
 import Link from "next/link"
 import axios from "axios";
 import dbConnect from "../utils/mongo";
-import products from "../models/product";
-import order from "../models/order";
+// import products from "../models/product";
+// import order from "../models/order";
 
 export default function Home({dataorder}) {
     

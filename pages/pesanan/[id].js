@@ -9,8 +9,8 @@ import "swiper/css/navigation";
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 import dbConnect from "../../utils/mongo";
-import products from "../../models/product";
-import order from "../../models/order";
+// import products from "../../models/product";
+// import order from "../../models/order";
 
 export const getServerSideProps = async ({params}) => {
   await dbConnect();
