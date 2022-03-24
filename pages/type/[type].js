@@ -1,5 +1,5 @@
 // import { sql_query } from "../../lib/db.js"
-import MainLayout from "../../components/Layout";
+import MainLayout from "../../components/layout";
 import Link from "next/link"
 import axios from "axios";
 

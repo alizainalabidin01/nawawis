@@ -1,4 +1,4 @@
-import MainLayout from "../../components/ayout";
+import MainLayout from "../../components/layout";
 import Link from "next/link"
 import axios from "axios";
 import {useState}  from "react";
