@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.list-unstyled {
+    color: white;
+    
+  }
+  .list-unstyled i {
+    letter-spacing: -1px;
+    width: auto;
+  }
+  .list-unstyled a {
+    margin-left: 10px;
+  }
+  .list-unstyled-1 i:first-child {
+    color: #ecd227;
+  }
+  .list-unstyled-2 i:first-child,
+  .list-unstyled-2 i:first-child + i {
+    color: #ecd227;
+  }
+  .list-unstyled-3 i:first-child,
+  .list-unstyled-3 i:first-child + i,
+  .list-unstyled-3 i:first-child + i + i {
+    color: #ecd227;
+  }
+  .list-unstyled-4 i:first-child,
+  .list-unstyled-4 i:first-child + i,
+  .list-unstyled-4 i:first-child + i + i,
+  .list-unstyled-4 i:first-child + i + i + i {
+    color: #ecd227;
+  }
+  .list-unstyled-5 i {
+    color: #ecd227;
+  }
