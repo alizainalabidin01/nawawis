@@ -74,7 +74,7 @@ export default function Home({datanew, databest, dataall}) {
   )
 }
 
-export const getStaticProps = async () => {
+export const getInitialProps = async () => {
   await dbConnect();
     const new1 = await axios.get("http://localhost:3000/api/product/newarrival")
     const best = await axios.get("http://localhost:3000/api/product/bestseller")
