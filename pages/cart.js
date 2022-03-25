@@ -41,7 +41,7 @@ export default function Home({dataorder}) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
     await dbConnect();
     const res = await axios.get("http://localhost:3000/api/order")
     // const best = await  sql_query('SELECT * FROM kriyathor2 ORDER BY sold_produk DESC LIMIT 6')
