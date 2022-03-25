@@ -2,11 +2,11 @@ import MainLayout from "../components/layout";
 import Slider from "../components/slider";
 // import { sql_query } from "../lib/db.js"
 import Link from "next/link"
-import axios from "axios";
+// import axios from "axios";
 import dbConnect from "../utils/mongo";
 import products from "../models/product";
 // import order from "../models/order";
-export default function Home({datanew, databest, dataall}) {
+export default function Home({datanew}) {
   return (
     <MainLayout>
       <Slider/>
