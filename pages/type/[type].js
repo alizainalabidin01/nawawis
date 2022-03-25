@@ -6,7 +6,7 @@ import dbConnect from "../../utils/mongo";
 // import products from "../../models/product";
 // import order from "../../models/order";
 
-export const getStaticProps = async ({params}) => {
+export const getServerSideProps = async ({params}) => {
   await dbConnect();
   const res = await axios.get(`http://localhost:3000/api/product/${params.type}`)
  

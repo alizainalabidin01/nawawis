@@ -31,7 +31,7 @@ export default function Home({datanew, databest, dataall}) {
         </div>
       </section>
  
-       <section className="shadow-md px-2">
+       {/* <section className="shadow-md px-2">
         <h6 className="my-5 mx-6 sm:text-2xl font-['serif']">Best Seller</h6>
         <div>
           <div className="grid grid-cols-2 md:grid-cols-3 justify-center">
@@ -69,13 +69,13 @@ export default function Home({datanew, databest, dataall}) {
             </Link>)}
           </div>
         </div>
-      </section> 
+      </section>  */}
     </MainLayout>
   )
 }
 
-export const getStaticProps = async () => {
-  await dbConnect();
+export const getServerSideProps = async () => {
+  
     const new1 = await axios.get("http://localhost:3000/api/product/newarrival")
     const best = await axios.get("http://localhost:3000/api/product/bestseller")
     const all = await axios.get("http://localhost:3000/api/product")
