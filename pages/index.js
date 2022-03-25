@@ -6,7 +6,7 @@ import Link from "next/link"
 import dbConnect from "../utils/mongo";
 import products from "../models/product";
 // import order from "../models/order";
-export default function Home({datanew}) {
+export default function Home({datanew, databest, dataall}) {
   return (
     <MainLayout>
       <Slider/>
@@ -31,7 +31,7 @@ export default function Home({datanew}) {
         </div>
       </section>
  
-       {/* <section className="shadow-md px-2">
+       <section className="shadow-md px-2">
         <h6 className="my-5 mx-6 sm:text-2xl font-['serif']">Best Seller</h6>
         <div>
           <div className="grid grid-cols-2 md:grid-cols-3 justify-center">
@@ -69,21 +69,31 @@ export default function Home({datanew}) {
             </Link>)}
           </div>
         </div>
-      </section>  */}
+      </section> 
     </MainLayout>
   )
 }
 
 export const getServerSideProps = async () => {
   await dbConnect();
-  const data = await products.find().lean();
+    var pipeline = [
+        {$sort :{"sold":-1 }}
+    ]
+  const data = await products.find().lean().limit(6);
+  
+  const best = await products.aggregate(pipeline).limit(6)
+  const all = await products.find().lean();
 
   // Pass data to the page via props
   return {
     props: {
       datanew: JSON.parse(JSON.stringify(data)),
+      databest: JSON.parse(JSON.stringify(best)),
+      dataall: JSON.parse(JSON.stringify(all)),
     },
+    
   };
+  
 }
 //     const new1 = await axios.get("http://localhost:3000/api/product/newarrival")
 //     const best = await axios.get("http://localhost:3000/api/product/bestseller")

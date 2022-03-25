@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 // import { Transition } from "@headlessui/react";
 import Link from 'next/link'
 
@@ -23,8 +23,8 @@ function Navbar() {
                 </Link> */}
                 <Link href='/cart'>
                   <a className="cursor-pointer hover:bg-gray-500 text-black hover:text-white px-1 py-1 text-xm md:px-3 md:py-2 rounded-md md:text-sm font-medium" >
-                  {/* <i className="fa-solid fa-bag-shopping"></i> */}
-                  card
+                  <i className="fa-solid fa-bag-shopping"></i>
+                 
                   </a>
                 </Link>
                 {/* <Link href='/'>
@@ -59,7 +59,7 @@ function Navbar() {
                   <span>Dress</span>
                   </a>
                 </Link>
-                <Link href={'/type/pants'} key={'pants'}>
+                <Link href={'/type/suit'} key={'pants'}>
                   <a className="cursor-pointer hover:bg-gray-500 text-black hover:text-white px-1 py-1 text-xs md:px-3 md:py-2 rounded-md md:text-sm font-medium" >
                   <span>Pants</span>
                   </a>

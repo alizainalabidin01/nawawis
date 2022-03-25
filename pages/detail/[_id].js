@@ -1,6 +1,6 @@
 import MainLayout from "../../components/layout";
 import Link from "next/link"
-import axios from "axios";
+// import axios from "axios";
 import {useState}  from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -9,27 +9,42 @@ import "swiper/css/navigation";
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 import dbConnect from "../../utils/mongo";
-// import products from "../../models/product";
+import products from "../../models/product";
 // import order from "../../models/order";
 
 export const getServerSideProps = async ({params}) => {
   await dbConnect();
-  const res = await axios.get(`http://localhost:3000/api/product/id/${params.id}`)
-  const type = res.data.type
-  console.log(type);
-  const type1 = await axios.get(`http://localhost:3000/api/product/${type}`)
-  return {
-    props : {
-      dataid : res.data,
-      datatype : type1.data
-    }
-  };
+  const _id = params
+const data = await products.findById(_id);
+console.log(params);
+// const type1 = data.type
+// const type = await products.find(type1).lean();
+
+// Pass data to the page via props
+return {
+  props: {
+    dataid: JSON.parse(JSON.stringify(data)),
+    // datatype: JSON.parse(JSON.stringify(type)),
+  },
+};
+
+  // await dbConnect();
+  // const res = await axios.get(`http://localhost:3000/api/product/id/${params.id}`)
+  // const type = res.data.type
+  // console.log(type);
+  // const type1 = await axios.get(`http://localhost:3000/api/product/${type}`)
+  // return {
+  //   props : {
+  //     dataid : res.data,
+  //     datatype : type1.data
+  //   }
+  // };
 
 }
 
 
 
-function Details ({dataid, datatype}) {
+function Details ({dataid}) {
   const [price, setPrice] = useState(Number);
   const [size, setSize] = useState('');
     return(
@@ -82,7 +97,7 @@ function Details ({dataid, datatype}) {
         </div>
         
         </section>
-        <section className="shadow-md px-2">
+        {/* <section className="shadow-md px-2">
         <h6 className="my-5 mx-6 sm:text-2xl font-['serif']">Similar Product</h6>
         <div>
           <div className="grid grid-cols-2 md:grid-cols-3 justify-center">
@@ -100,7 +115,7 @@ function Details ({dataid, datatype}) {
             </Link>)}
           </div>
         </div>
-      </section> 
+      </section>  */}
         </MainLayout>
     );
 }
