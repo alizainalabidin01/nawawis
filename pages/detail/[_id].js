@@ -16,15 +16,15 @@ export const getServerSideProps = async ({params}) => {
   await dbConnect();
   const _id = params
 const data = await products.findById(_id);
-console.log(params);
-// const type1 = data.type
-// const type = await products.find(type1).lean();
+const type1 = data.type
+console.log(type1);
+const type = await products.find({"type":type1}).lean();
 
 // Pass data to the page via props
 return {
   props: {
     dataid: JSON.parse(JSON.stringify(data)),
-    // datatype: JSON.parse(JSON.stringify(type)),
+    datatype: JSON.parse(JSON.stringify(type)),
   },
 };
 
@@ -44,7 +44,7 @@ return {
 
 
 
-function Details ({dataid}) {
+function Details ({dataid,datatype}) {
   const [price, setPrice] = useState(Number);
   const [size, setSize] = useState('');
     return(
@@ -97,7 +97,7 @@ function Details ({dataid}) {
         </div>
         
         </section>
-        {/* <section className="shadow-md px-2">
+        <section className="shadow-md px-2">
         <h6 className="my-5 mx-6 sm:text-2xl font-['serif']">Similar Product</h6>
         <div>
           <div className="grid grid-cols-2 md:grid-cols-3 justify-center">
@@ -115,7 +115,7 @@ function Details ({dataid}) {
             </Link>)}
           </div>
         </div>
-      </section>  */}
+      </section> 
         </MainLayout>
     );
 }
