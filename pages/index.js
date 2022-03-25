@@ -4,7 +4,7 @@ import Slider from "../components/slider";
 import Link from "next/link"
 import axios from "axios";
 import dbConnect from "../utils/mongo";
-// import products from "../models/product";
+import products from "../models/product";
 // import order from "../models/order";
 export default function Home({datanew, databest, dataall}) {
   return (
@@ -75,18 +75,27 @@ export default function Home({datanew, databest, dataall}) {
 }
 
 export const getServerSideProps = async () => {
-  
-    const new1 = await axios.get("http://localhost:3000/api/product/newarrival")
-    const best = await axios.get("http://localhost:3000/api/product/bestseller")
-    const all = await axios.get("http://localhost:3000/api/product")
-    // const best = await  sql_query('SELECT * FROM kriyathor2 ORDER BY sold_produk DESC LIMIT 6')
-    // let databest = JSON.parse(JSON.stringify(best))
-    return {
-      props : {
-        datanew : new1.data,
-        databest : best.data,
-        dataall : all.data
-      }
-    };
+  await dbConnect();
+  const data = await products.find().lean();
 
+  // Pass data to the page via props
+  return {
+    props: {
+      datanew: JSON.parse(JSON.stringify(data)),
+    },
+  };
 }
+//     const new1 = await axios.get("http://localhost:3000/api/product/newarrival")
+//     const best = await axios.get("http://localhost:3000/api/product/bestseller")
+//     const all = await axios.get("http://localhost:3000/api/product")
+//     // const best = await  sql_query('SELECT * FROM kriyathor2 ORDER BY sold_produk DESC LIMIT 6')
+//     // let databest = JSON.parse(JSON.stringify(best))
+//     return {
+//       props : {
+//         datanew : new1.data,
+//         databest : best.data,
+//         dataall : all.data
+//       }
+//     };
+
+// }
