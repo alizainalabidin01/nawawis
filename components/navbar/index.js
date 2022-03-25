@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Transition } from "@headlessui/react";
+// import { Transition } from "@headlessui/react";
 import Link from 'next/link'
 
 function Navbar() {
@@ -23,6 +23,7 @@ function Navbar() {
                 </Link> */}
                 <Link href='/cart'>
                   <a className="cursor-pointer hover:bg-gray-500 text-black hover:text-white px-1 py-1 text-xm md:px-3 md:py-2 rounded-md md:text-sm font-medium" >
+                  {/* <i className="fa-solid fa-bag-shopping"></i> */}
                   card
                   </a>
                 </Link>
