@@ -39,8 +39,7 @@ const Add = () => {
 
       const { url } = uploadRes.data;
       setImgUrl( arr => [...arr, url])
-      alert(imgUrl)
-      console.log(imgUrl);
+      alert("gambar berhasil dimasukan")
     } catch (err) {
       console.log(err);
     }
@@ -63,7 +62,7 @@ const Add = () => {
       setNameProduct(''),
       setPrices(''),
       setType('')
-   
+      alert("data berhasil dimasukan")
   };
 
   return (

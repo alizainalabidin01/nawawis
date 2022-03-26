@@ -4,16 +4,17 @@ import axios from "axios";
 import {useState}  from "react";
 import dbConnect from "../../utils/mongo";
 // import products from "../../models/product";
-// import order from "../../models/order";
+import order from "../../models/order";
 
 export const getServerSideProps = async ({params}) => {
   await dbConnect();
-    const res = await axios.get(`http://localhost:3000/api/order/id/${params.id}`)
+  const _id = params
+  const data = await order.findById(_id);
     // const best = await  sql_query('SELECT * FROM kriyathor2 ORDER BY sold_produk DESC LIMIT 6')
     // let databest = JSON.parse(JSON.stringify(best))
     return {
       props : {
-        dataorder : res.data,
+        dataorder: JSON.parse(JSON.stringify(data)),
       
       }
     };
@@ -24,13 +25,13 @@ export const getServerSideProps = async ({params}) => {
 
 function Details ({dataorder}) {
     const [imgUrl, setImgUrl] = useState([]);
-    const [product_img, setImg] = useState([]);
+    const [imgPay, setImgPay] = useState([]);
     const status = "pembayaran sedang di verivikasi"
-    const imgPay = ""
+    
    
     const handlePay = async () => {
         const data = new FormData();
-        data.append("file", product_img);
+        data.append("file", imgPay);
         data.append("upload_preset", "nawawis");
         try {
           const uploadRes = await axios.post(
@@ -38,8 +39,9 @@ function Details ({dataorder}) {
             data
           );
           const { url } = uploadRes.data;
-          console.log(dataorder._id);
+          setImgUrl( arr => [...arr, url])
           setImgUrl(url)
+          console.log(imgUrl);
         } catch (err) {
             console.log(err);
           }
@@ -80,7 +82,7 @@ function Details ({dataorder}) {
         </div>
         <div className=" py-3">
           <label >Choose an image </label><br></br>
-          <input className="w-full"  type="file" onChange={(e) => setImg(e.target.files[0])} />
+          <input className="w-full"  type="file" onChange={(e) => setImgPay(e.target.files[0])} />
         </div>
         
       
