@@ -10,7 +10,7 @@ import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 import dbConnect from "../../utils/mongo";
 import products from "../../models/product";
-// import order from "../../models/order";
+import order from "../../models/order";
 
 export const getServerSideProps = async ({params}) => {
   await dbConnect();
@@ -50,8 +50,8 @@ function Details ({dataid}) {
       name_product,
       product_img
     };
-
-    await axios.post("http://localhost:3000/api/order", newOrder);
+    await order.create(newOrder)
+    // await axios.post("http://localhost:3000/api/order", newOrder);
     alert("data berhasil dimasukan")
 };
     return(

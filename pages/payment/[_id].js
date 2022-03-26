@@ -52,8 +52,8 @@ function Details ({dataorder}) {
         status
 
       };
-  
-      await axios.put(`http://localhost:3000/api/order/id/${dataorder._id}`, newOrder);
+      await Product.update({"_id":`${dataorder._id}`},{$set: newOrder})
+      // await axios.put(`http://localhost:3000/api/order/id/${dataorder._id}`, newOrder);
       alert("data berhasil dimasukan")
   };
     return(
