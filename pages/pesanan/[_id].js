@@ -1,7 +1,7 @@
 import MainLayout from "../../components/layout";
 import Link from "next/link"
 import axios from "axios";
-import {useState}  from "react";
+import {useState, useEffect}  from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -10,13 +10,17 @@ import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 import dbConnect from "../../utils/mongo";
 import products from "../../models/product";
-import order from "../../models/order";
+// import order from "../../models/order";
+
 
 export const getServerSideProps = async ({params}) => {
   await dbConnect();
   const _id = params
   const data = await products.findById(_id);
- 
+  // if (req.method === "POST") {
+  //  await order.create(req, res);
+  // }
+
   return {
     props : {
       dataid: JSON.parse(JSON.stringify(data)),
@@ -27,17 +31,21 @@ export const getServerSideProps = async ({params}) => {
 }
 
 
-
-
 function Details ({dataid}) {
   const [total, setTotal] = useState(Number);
   const [size, setSize] = useState('');
   const [name_customer, setNameCustomer] = useState('');
   const [addres, setAddres] = useState('');
   const [note, setNote] = useState('');
+  const [orderan, setOrderan] = useState('');
   const id_product = dataid._id
   const name_product = dataid.name_product
   const product_img = dataid.img[0]
+  
+  // useEffect(() => {
+    
+  //   order.create(orderan)
+  // }, [])
   const handlePay = async () => {
       
     const newOrder = {
@@ -50,7 +58,8 @@ function Details ({dataid}) {
       name_product,
       product_img
     };
-    await order.create(newOrder)
+   setOrderan(newOrder)
+    // await order.create(newOrder)
     // await axios.post("http://localhost:3000/api/order", newOrder);
     alert("data berhasil dimasukan")
 };
