@@ -44,7 +44,7 @@ const orderschema = new mongoose.Schema ({
         required: true,
         maxlength: 200
     },
-    status:{
+    statuss:{
         type: String,
         default: "Belum Dibayarkan"
     },

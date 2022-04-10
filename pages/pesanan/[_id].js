@@ -10,13 +10,42 @@ import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 import dbConnect from "../../utils/mongo";
 import products from "../../models/product";
-// import order from "../../models/order";
+import order from "../../models/order";
+import bodyParser from "body-parser";
+import { promisify } from "util";
 
+const getBody = promisify(bodyParser.urlencoded());
 
-export const getServerSideProps = async ({params}) => {
+export const getServerSideProps = async ({params, req, res}) => {
   await dbConnect();
   const _id = params
   const data = await products.findById(_id);
+  const id_product =   data._id
+  const name_product =  JSON.parse(JSON.stringify(data.name_product))
+  const product_img =  JSON.parse(JSON.stringify(data.img[0]))
+  if (req.method === "POST") {
+    await getBody(req, res);
+    // const [newOrder, setNewOrder] = useState([]);
+    const name_customer =  req.body.name_customer
+    const total =  req.body.total
+    const size =  req.body.size
+    const addres =  req.body.addres
+    const note =  req.body.note
+    const newOrder = ({
+    total,
+    name_customer,
+    size,
+    addres,
+    id_product,
+    note,
+    name_product,
+    product_img
+  })
+    console.log(newOrder);
+    await order.create(newOrder);
+    // alert("ok")
+    
+  }
   // if (req.method === "POST") {
   //  await order.create(req, res);
   // }
@@ -31,38 +60,38 @@ export const getServerSideProps = async ({params}) => {
 }
 
 
-function Details ({dataid}) {
+function Details ({dataid, props}) {
   const [total, setTotal] = useState(Number);
   const [size, setSize] = useState('');
-  const [name_customer, setNameCustomer] = useState('');
-  const [addres, setAddres] = useState('');
-  const [note, setNote] = useState('');
-  const [orderan, setOrderan] = useState('');
-  const id_product = dataid._id
-  const name_product = dataid.name_product
-  const product_img = dataid.img[0]
-  
+  // const [name_customer, setNameCustomer] = useState('');
+  // const [addres, setAddres] = useState('');
+  // const [note, setNote] = useState('');
+  const [newOrder, setNewOrder] = useState([]);
+  // const id_product = dataid._id
+  // const name_product = dataid.name_product
+  // const product_img = dataid.img[0]
+  props=newOrder
   // useEffect(() => {
     
   //   order.create(orderan)
   // }, [])
-  const handlePay = async () => {
+  // const handlePay = async () => {
       
-    const newOrder = {
-      name_customer,
-      total,
-      size,
-      addres,
-      id_product,
-      note,
-      name_product,
-      product_img
-    };
-   setOrderan(newOrder)
+  //    setNewOrder(
+  //     name_customer,
+  //     total,
+  //     size,
+  //     addres,
+  //     id_product,
+  //     note,
+  //     name_product,
+  //     product_img
+  //   )
+    
     // await order.create(newOrder)
     // await axios.post("http://localhost:3000/api/order", newOrder);
-    alert("data berhasil dimasukan")
-};
+    
+// };
     return(
         <MainLayout>
         <section className="py-3">
@@ -98,13 +127,19 @@ function Details ({dataid}) {
                   <button  className="cursor-pointer hover:bg-gray-500 text-black hover:text-white px-1 py-1 text-xs md:px-3 md:py-2 rounded-md md:text-sm font-medium" onClick={() => setTotal(dataid.price[2]) + setSize("XL")}>XL</button>
         </div>
         </div>
-        <p  onChange={() => setSize({size})}>{size}</p>
+        <form method="POST">
+        {/* <p>{size}</p> */}
+        <div className=" py-2">
+        <input  name="size" defaultValue={(props.size = size)} type="text"  readOnly="readonly" placeholder={size} />
+        <input className="opacity-50" name="total" defaultValue={props.total = total}  readOnly="readonly"/>
+        </div>
         <div className=" py-2">
         <label >name : </label>
           <input
            className="border-2"
             type="text"
-            onChange={(e) => setNameCustomer(e.target.value)}
+            name="name_customer"
+           defaultValue={props.name_customer}
           />
         </div>
         <div className=" py-2">
@@ -112,7 +147,8 @@ function Details ({dataid}) {
           <input
            className="border-2"
             type="text"
-            onChange={(e) => setAddres(e.target.value)}
+            name="addres"
+           defaultValue={props.addres}
           />
         </div>
         <div className=" py-2">
@@ -120,12 +156,15 @@ function Details ({dataid}) {
           <input
            className="border-2"
             type="text"
-            onChange={(e) => setNote(e.target.value)}
+            name="note"
+           defaultValue={props.note}
           />
         </div>
         
         {/* <Link href={'/pembayaran/' + dataid._id} key={dataid._id}><a> */}
-        <div onClick={handlePay} className="bg-[#f5eddc] flex flex-row w-full mx-auto p-2 my-2 rounded-xl text-sm sm:text-base justify-center md:absolute md:inset-x-0 bottom-0"><p  onChange={() => setTotal({total})}> {"Rp."+total.toLocaleString()}</p></div>
+       
+        <div className="bg-[#f5eddc] flex flex-row w-full mx-auto p-2 my-2 rounded-xl text-sm sm:text-base justify-center md:absolute md:inset-x-0 bottom-0"><button type="submit"  onChange={() => setTotal({total})}> {"Rp."+total.toLocaleString()}</button></div>
+        </form>
         {/* </a></Link> */}
         </div>
         

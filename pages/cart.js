@@ -26,7 +26,7 @@ export default function Home({dataorder}) {
                   <p>Addres : {item.addres}</p>
                   <p>Note : {item.note}</p>
                   <p>Customer : {item.name_customer}</p>
-                  <p>Status : {item.status}</p>
+                  <p>Status : {item.statuss}</p>
                   
                   <div className=" flex flex-row w-min  my-2 rounded-xl text-xs ">{"Rp."+item.total.toLocaleString()}
                   </div>

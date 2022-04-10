@@ -29,6 +29,7 @@ const Add = () => {
   
   const handleImage = async () => {
     const data = new FormData();
+    console.log("..............."+img);
     data.append("file", img);
     data.append("upload_preset", "nawawis");
     try {

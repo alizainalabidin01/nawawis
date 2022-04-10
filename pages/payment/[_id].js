@@ -5,13 +5,58 @@ import {useState}  from "react";
 import dbConnect from "../../utils/mongo";
 // import products from "../../models/product";
 import order from "../../models/order";
+import bodyParser from "body-parser";
+import { promisify } from "util";
+// import FormData from 'form-data';
+// import fs from 'fs'
 
-export const getServerSideProps = async ({params}) => {
+const getBody = promisify(bodyParser.urlencoded());
+
+export const getServerSideProps = async ({params, req, res}) => {
   await dbConnect();
   const _id = params
   const data = await order.findById(_id);
-    // const best = await  sql_query('SELECT * FROM kriyathor2 ORDER BY sold_produk DESC LIMIT 6')
-    // let databest = JSON.parse(JSON.stringify(best))
+  if (req.method === "POST") {
+   await getBody(req, res);
+   const statuss = "pembayaran sedang di verivikasi"
+   const imgurl = req.body.url
+   const pay = ({
+            imgPay: imgurl,
+            statuss
+          })
+   await order.update(`${params}`,{$set: pay})
+  //  const img = fs.createReadStream(file[0]);
+  //  console.log("......................................................."+img);
+  //   const data = new FormData();
+  //   data.append("file", img);
+  //   data.append("upload_preset", "nawawis");
+  //   try{
+  //     // const uploadRes = await axios.post(
+  //     //   "https://api.cloudinary.com/v1_1/dbofxpqui/image/upload", 
+  //     //   data
+  //     // );
+  //     const uploadRes = await fetch('https://api.cloudinary.com/v1_1/dbofxpqui/image/upload', {
+  //     method: 'POST',
+  //     body: data
+  //   }).then(r => r.json());
+      
+  //     const url  = uploadRes.secure_url;
+  //       console.log("url"+url);
+  //       const pay = ({
+  //         imgPay: url,
+  //         statuss
+  //       })
+  //       console.log(pay);
+  
+  //    await order.update(`${params}`,{$set: pay})
+
+  //     }catch (err) {
+  //       console.log(err);
+  //     }
+     
+   
+    
+  }
     return {
       props : {
         dataorder: JSON.parse(JSON.stringify(data)),
@@ -21,41 +66,66 @@ export const getServerSideProps = async ({params}) => {
 
 }
 
+// export const test = async ({imgPay}) =>{
+//   const imgUrl =''
+// alert(imgPay)
+  
+//   const statuss = "pembayaran sedang di verivikasi"
 
-
-function Details ({dataorder}) {
-    const [imgUrl, setImgUrl] = useState([]);
-    const [imgPay, setImgPay] = useState([]);
-    const status = "pembayaran sedang di verivikasi"
+//   // const data = new FormData();
+//   // data.append("file", imgPay);
+//   // data.append("upload_preset", "nawawis");
+ 
+//   //   const uploadRes = await axios.post(
+//   //     "https://api.cloudinary.com/v1_1/dbofxpqui/image/upload", 
+//   //     data
+//   //   );
     
+//   //   const { url } = uploadRes.data;
+//   //   imgUrl = url
+//   //   console.log(imgUrl);
+//   //   alert("berhasil")
+  
    
-    const handlePay = async () => {
-        const data = new FormData();
-        data.append("file", imgPay);
-        data.append("upload_preset", "nawawis");
-        try {
-          const uploadRes = await axios.post(
-            "https://api.cloudinary.com/v1_1/dbofxpqui/image/upload", 
-            data
-          );
-          const { url } = uploadRes.data;
-          setImgUrl( arr => [...arr, url])
-          setImgUrl(url)
-          console.log(imgUrl);
-        } catch (err) {
-            console.log(err);
-          }
-    
-         
-      const newOrder = {
-        imgPay : imgUrl,
-        status
+//  const newOrder = ({
+ 
+//   statuss
 
-      };
-      // await order.update({"_id":`${dataorder._id}`},{$set: newOrder})
-      // await axios.put(`http://localhost:3000/api/order/id/${dataorder._id}`, newOrder);
-      alert("data berhasil dimasukan")
-  };
+// });
+
+// return{
+//   props:newOrder
+// }
+// // await order.update({"_id":`${dataorder._id}`},{$set: newOrder})
+// // await axios.put(`http://localhost:3000/api/order/id/${dataorder._id}`, newOrder);
+// // alert("data berhasil dimasukan")
+
+// }
+
+function Details ({dataorder, props}) {
+  const [img, setImg] = useState([]);
+  const [imgUrl, setImgUrl] = useState([]);
+  const [newOrder, setNewOrder] = useState([]);
+  props=newOrder
+  
+  const handlePay = async () => {
+    const data = new FormData();
+    console.log("..............."+img);
+    data.append("file", img);
+    data.append("upload_preset", "nawawis");
+    try {
+      const uploadRes = await axios.post(
+        "https://api.cloudinary.com/v1_1/dbofxpqui/image/upload", 
+        data
+      );
+
+      const { url } = uploadRes.data;
+      setImgUrl( arr => [...arr, url])
+      alert("gambar berhasil dimasukan")
+    } catch (err) {
+      console.log(err);
+    }
+  }
     return(
         <MainLayout>
         <section className="py-3">
@@ -80,13 +150,17 @@ function Details ({dataorder}) {
         <div className="flex flex-col md:flex-row w-full py-5">
         <div className='flex w-1/6 '><span> Customer:</span> </div><div className="flex w-full md:text-right md:justify-end">{dataorder.name_customer}</div>
         </div>
+        
         <div className=" py-3">
           <label >Choose an image </label><br></br>
-          <input className="w-full"  type="file" onChange={(e) => setImgPay(e.target.files[0])} />
+          <input className="w-full"  type="file" onChange={(e) => setImg(e.target.files[0])} />
+          <button onClick={handlePay}> Upload bukti pembayaran</button>
         </div>
         
-      
-        <div onClick={handlePay} className="bg-[#f5eddc] flex flex-row w-full mx-auto p-2 my-2 rounded-xl text-sm sm:text-base justify-center md:absolute md:inset-x-0 bottom-0"><p> {"upload bukti pembayaran"}</p></div>
+        <form method="POST" name="imgPay">
+        <input className="opacity-0" name="url" defaultValue={props.url = imgUrl}  readOnly="readonly"/>
+        <div  className="bg-[#f5eddc] flex flex-row w-full mx-auto p-2 my-2 rounded-xl text-sm sm:text-base justify-center md:absolute md:inset-x-0 bottom-0"><button > verivikasi pembayaran</button></div>
+        </form>
         </div>
         
         </div>
