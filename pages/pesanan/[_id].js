@@ -131,7 +131,7 @@ function Details ({dataid, props}) {
         {/* <p>{size}</p> */}
         <div className=" py-2">
         <input  name="size" defaultValue={(props.size = size)} type="text"  readOnly="readonly" placeholder={size} />
-        <input className="opacity-50" name="total" defaultValue={props.total = total}  readOnly="readonly"/>
+        <input className="opacity-0" name="total" defaultValue={props.total = total}  readOnly="readonly"/>
         </div>
         <div className=" py-2">
         <label >name : </label>
