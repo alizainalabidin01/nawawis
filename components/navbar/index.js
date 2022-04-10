@@ -59,7 +59,7 @@ function Navbar() {
                   <span>Dress</span>
                   </a>
                 </Link>
-                <Link href={'/type/suit'} key={'pants'}>
+                <Link href={'/type/pants'} key={'pants'}>
                   <a className="cursor-pointer hover:bg-gray-500 text-black hover:text-white px-1 py-1 text-xs md:px-3 md:py-2 rounded-md md:text-sm font-medium" >
                   <span>Pants</span>
                   </a>

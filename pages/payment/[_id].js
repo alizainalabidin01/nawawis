@@ -16,6 +16,7 @@ export const getServerSideProps = async ({params, req, res}) => {
   await dbConnect();
   const _id = params
   const data = await order.findById(_id);
+  const id = data._id
   if (req.method === "POST") {
    await getBody(req, res);
    const statuss = "pembayaran sedang di verivikasi"
@@ -24,7 +25,8 @@ export const getServerSideProps = async ({params, req, res}) => {
             imgPay: imgurl,
             statuss
           })
-   await order.update(`${params}`,{$set: pay})
+ console.log(params);
+   await order.update({"_id":`${id}`},{$set: pay})
   //  const img = fs.createReadStream(file[0]);
   //  console.log("......................................................."+img);
   //   const data = new FormData();
@@ -154,7 +156,7 @@ function Details ({dataorder, props}) {
         <div className=" py-3">
           <label >Choose an image </label><br></br>
           <input className="w-full"  type="file" onChange={(e) => setImg(e.target.files[0])} />
-          <button onClick={handlePay}> Upload bukti pembayaran</button>
+          <button onClick={handlePay}  className="bg-[#52411e] mt-1 px-1 py-1 text-white"> Upload bukti pembayaran</button>
         </div>
         
         <form method="POST" name="imgPay">
