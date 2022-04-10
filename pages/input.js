@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 
+
 const Add = () => {
   const [img, setImg] = useState([]);
   const [imgUrl, setImgUrl] = useState([]);
@@ -56,7 +57,7 @@ const Add = () => {
         img: imgUrl,
       };
 
-      await axios.post("http://localhost:3000/api/product", newProduct);
+      await axios.post("http://localhost:3000/api", newProduct);
       setImg(''),
       setImgUrl(''),
       setDesc(''),
