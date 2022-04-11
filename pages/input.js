@@ -13,16 +13,17 @@ export const getServerSideProps = async ({ req, res}) => {
 
   if (req.method === "POST") {
    await getBody(req, res);
-   const img = req.body.imgUrl
+   const img1 = req.body.imgUrl
+   const img2 = req.body.imgUrl1
    const desc = req.body.desc
    const price0 = req.body.price0
    const price1 = req.body.price1
    const price2 = req.body.price2
-   console.log(price1);
+   console.log(img1);
    const type = req.body.type
    const name_product = req.body.name_product
    const newProduct = ({
-            img,
+            img:[img1,img2],
             desc,
             price:[price0,price1,price2],
             type,
@@ -202,7 +203,8 @@ function Add ({props}){
         <input className="opacity-0" name="price1" defaultValue={props.price1 = price[1]}  readOnly="readonly"/>
         <input className="opacity-0" name="price2" defaultValue={props.price2 = price[2]}  readOnly="readonly"/>
         <input className="opacity-0" name="type" defaultValue={props.type = type}  readOnly="readonly"/>
-        <input className="opacity-0" name="imgUrl" defaultValue={props.imgUrl = imgUrl}  readOnly="readonly"/>
+        <input className="opacity-0" name="imgUrl" defaultValue={props.imgUrl = imgUrl[0]}  readOnly="readonly"/>
+        <input className="opacity-0" name="imgUrl1" defaultValue={props.imgUrl1 = imgUrl[1]}  readOnly="readonly"/>
         </form>
       </div>
     </div>
