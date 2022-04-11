@@ -70,7 +70,7 @@ function Add ({props}){
     const data = new FormData();
     console.log("..............."+img);
     data.append("file", img);
-    data.append("upload_preset", "nawawis");
+    data.append("upload_preset", "nawawisProduct");
     try {
       const uploadRes = await axios.post(
         "https://api.cloudinary.com/v1_1/dbofxpqui/image/upload", 
