@@ -2,6 +2,7 @@
 // import { Transition } from "@headlessui/react";
 import Link from 'next/link'
 
+
 function Navbar() {
   // const [isOpen, setIsOpen] = useState(false);
   return (
@@ -12,7 +13,7 @@ function Navbar() {
           <div className="flex items-center mx-8 md:mx-20 justify-between w-full">
             <div className="flex justify-center items-center flex-shrink-0 ">
               <Link href='/'><a>
-              <h2>Nawawis Boutique</h2>
+              <img src="/images/LogoItem.png" className="w-auto h-7" />
               </a></Link>
             </div>
             <div className="ml-3 md:ml-10 flex items-baseline space-x-4 ">

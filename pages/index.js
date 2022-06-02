@@ -12,7 +12,7 @@ export default function Home({datanew, databest, dataall}) {
       <Slider/>
       
       <section className="shadow-md px-2">
-        <h6 className="my-5 mx-6 sm:text-2xl font-['serif']">NEW Arrival</h6>
+        <h6 className="my-5 mx-6 sm:text-2xl font-['serif']">New Arrival</h6>
         <div>
           <div className="grid grid-cols-2 md:grid-cols-3 justify-center">
           {datanew.map((item)=>
