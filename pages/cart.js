@@ -20,7 +20,7 @@ export default function Home({dataorder}) {
             <Link href={'/payment/' + item._id} key={item._id}><a>
               <div className="flex flex-col gap-2 p-1 my-1 font-['sans-serif'] text-xs bg-white hover:bg-[#f5eddc]">
                 <div className="flex flex-col gap-2">
-                  <img className="object-contain" src={item.product_img} />
+                  <img className="object-contain" src={item.product_img[0]} />
                   <p>Name Product :{item.name_product.substring(0,26)+'...'}</p>
                   <p>Size :{item.size}</p>
                   <p>Addres : {item.addres}</p>

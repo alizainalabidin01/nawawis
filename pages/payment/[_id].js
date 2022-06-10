@@ -134,7 +134,7 @@ function Details ({dataorder, props}) {
         <div className="flex flex-row w-full ">
         
         <div className="h-30 md:h-96 w-6/12 gap-2 mx-6 ">
-        <img className="object-contain h-full mx-auto" src={dataorder.product_img} />
+        <img className="object-contain h-full mx-auto" src={dataorder.product_img[0]} />
         </div>
         <div className="h-30 md:relative md:h-96 text-xs md:font-['serif'] pr-3 w-6/12">
         <div className="flex flex-col md:flex-row w-full">
