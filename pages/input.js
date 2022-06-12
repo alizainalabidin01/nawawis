@@ -46,7 +46,7 @@ function Add ({props}){
   const [name_product, setNameProduct] = useState(null);
   const [type, setType] = useState(null);
   const [desc, setDesc] = useState(null);
-  const [price, setPrices] = useState([Number]);
+  const [price, setPrices] = useState([]);
   const [new1, setNew] = useState([]);
   props=new1
   // const [extraCategory, setExtraCategory] = useState([]);
@@ -70,10 +70,10 @@ function Add ({props}){
     const data = new FormData();
     console.log("..............."+img);
     data.append("file", img);
-    data.append("upload_preset", "nawawisproduct");
+    data.append("upload_preset", "nawawisProduct");
     try {
       const uploadRes = await axios.post(
-        "https://api.cloudinary.com/v1_1/dp3l7tywm/image/upload", 
+        "https://api.cloudinary.com/v1_1/dbofxpqui/image/upload", 
         data
       );
 

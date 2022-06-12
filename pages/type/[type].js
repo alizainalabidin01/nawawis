@@ -39,7 +39,7 @@ function Type ({datatype}) {
         <div>
           <div className="grid grid-cols-2 md:grid-cols-3 justify-center">
           {datatype.map(item=>
-            <Link href={'/detail/' +item._id} key={item._id}><a>
+            <Link href={'/pesanan/' +item._id} key={item._id}><a>
               <div className="flex flex-col gap-2 p-1 my-1 font-['sans-serif'] text-xs bg-white hover:bg-[#f5eddc]">
                 <div className="flex flex-col gap-2">
                   <img className="object-contain" src={item.img[0]} />
