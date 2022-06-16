@@ -21,7 +21,6 @@ export default function Home({datanew, databest, dataall}) {
                 <div className="flex flex-col gap-2">
                   <img className="object-contain" src={item.img[0]} />
                   <p>{item.name_product.substring(0,26)}</p>
-                  <p>Like :{item.like}</p>
                   
                   <div className=" flex flex-row w-min  my-2 rounded-xl text-xs ">{"Rp."+item.price[0].toLocaleString()}
                   </div>
@@ -42,7 +41,7 @@ export default function Home({datanew, databest, dataall}) {
                 <div className="flex flex-col gap-2">
                   <img className="object-contain" src={item.img[0]} />
                   <p>{item.name_product.substring(0,26)+'...'}</p>
-                  <p>Like :{item.like}</p>
+              
                   <div className=" flex flex-row w-min  my-2 rounded-xl text-xs ">{"Rp."+item.price[0].toLocaleString()}
                   </div>
                 </div>
@@ -62,7 +61,7 @@ export default function Home({datanew, databest, dataall}) {
                 <div className="flex flex-col gap-2">
                   <img className="object-contain" src={item.img[0]} />
                   <p>{item.name_product.substring(0,26)+'...'}</p>
-                  <p>Like :{item.like}</p>
+                 
                   <div className=" flex flex-row w-min  my-2 rounded-xl text-xs ">{"Rp."+item.price[0].toLocaleString()}
                   </div>
                 </div>
