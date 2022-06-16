@@ -43,8 +43,8 @@ function Type ({datatype}) {
               <div className="flex flex-col gap-2 p-1 my-1 font-['sans-serif'] text-xs bg-white hover:bg-[#f5eddc]">
                 <div className="flex flex-col gap-2">
                   <img className="object-contain" src={item.img[0]} />
-                  <p>{item.name_product.substring(0,26)+'...'}</p>
-                  <p>like :{item.like}</p>
+                  <p>{item.name_product.substring(0,26)}</p>
+                 
                   <div className=" flex flex-row w-min  my-2 rounded-xl text-xs ">{"Rp."+item.price[0].toLocaleString()}
                   </div>
                 </div>

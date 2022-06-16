@@ -22,10 +22,6 @@ const productschema = new mongoose.Schema ({
         required: true,
         maxlength:200 
     },
-    like:{
-        type: Number,
-        default: 0
-    },
     sold:{
         type: Number,
         default: 0
