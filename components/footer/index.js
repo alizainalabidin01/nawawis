@@ -14,17 +14,17 @@ const Footer = () => {
             <div className="text-sm text-center">
               <h5 className="font-bold uppercase"> Follow </h5>
               <ul className="flex-col gap-4 sm:flex-row items-center">
-                <li className="flex gap-2 pb-2"> 
-                <i className="fa fa-shopping-bag">
+                <li className="flex gap-2 pb-2 "> 
+                <i className="fa fa-shopping-bag"></i>
                   <span><Link className='list-none' href="https://shopee.co.id/nawawis.boutique?smtt=0.131462281-1654134687.9"> 
-                  <a> {"Nawawi's Boutique"}</a> 
-                  </Link></span></i></li>
+                  <a className='list-none'> {"Nawawi's Boutique"}</a> 
+                  </Link></span></li>
                 
                 <li className="flex gap-2 pb-2">  
-                <i  className="fab fa-instagram">
-                  <span><Link className='text-sm' href="https://instagram.com/nawawis.boutique?igshid=YmMyMTA2M2Y=">  
-                  <a>{"Nawawi's Boutique"}</a> 
-                  </Link></span></i></li>
+                <i  className="fab fa-instagram"></i>
+                  <span ><Link className='text-sm ' href="https://instagram.com/nawawis.boutique?igshid=YmMyMTA2M2Y=">  
+                  <a className='list-none'>{"Nawawi's Boutique"}</a> 
+                  </Link></span></li>
               </ul>
             </div>
             <div className="text-sm text-center sm:text-left">
