@@ -145,7 +145,7 @@ function Details ({dataid, props}) {
            defaultValue={props.name_customer}
            required
           />
-          <input  name="total" onChange={() => setTotal({total})} defaultValue={props.total = total} type="text" readOnly="readonly" required/>
+          <input className="opacity-0"  name="total" onChange={() => setTotal({total})} defaultValue={props.total = total} type="text" readOnly="readonly" required/>
           
         </div>
         <div className="md:py-0 py-2">
@@ -156,7 +156,7 @@ function Details ({dataid, props}) {
             name="addres"
            defaultValue={props.addres}
            required
-          /><input  name="size" defaultValue={(props.size = size)} type="text"  readOnly="readonly" placeholder={size} required />
+          /><input className="opacity-0"  name="size" defaultValue={(props.size = size)} type="text"  readOnly="readonly" placeholder={size} required />
         </div>
         <div className=" py-2">
         <label >Note : </label>
