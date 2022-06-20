@@ -13,8 +13,9 @@ module.exports = {
     },
     extend: {
       spacing: {
-        '100': '30rem'
-      }
+        '100': '30rem',
+      },
+      
     },
   },
   plugins: [],

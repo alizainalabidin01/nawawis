@@ -117,11 +117,11 @@ function Details ({dataid, props}) {
       ))}
     </Swiper>
         </div>
-        <div className="h-30 md:relative  text-xs mr-2 w-3/5 md:mr-2 md:w-6/12">
-        <div className="flex flex-col md:flex-row w-full">
+        <div className="h-30 md:relative  text-xs  w-3/5  md:w-6/12">
+        <div className="flex flex-col pr-1 md:flex-row w-full">
         <div className='flex w-1/6'><span> Product:</span> </div><div className="flex w-full md:text-right md:justify-end">{dataid.name_product}</div>
         </div>
-        <div className="flex flex-col md:flex-row w-full py-5">
+        <div className="flex flex-col pr-1 md:flex-row w-full py-5">
         <div className='flex w-1/6 '><span> Description:</span> </div><div className="flex w-full md:text-right md:justify-end whitespace-pre-line"><p>{dataid.desc}</p></div>
         </div>
         <div className="flex flex-row w-full py-5">
@@ -133,17 +133,18 @@ function Details ({dataid, props}) {
        
         </div>
         </div>
-        <div >
-        <form className=" flex flex-row w-full" method="POST">
+        <form  method="POST">
+        <div className=" flex flex-row" >
+       
         {/* <p>{size}</p> */}
-        <div className=" flex flex-col py-2 w-auto">
+        <div className=" flex flex-col py-2 ">
         <label className="py-0.5" >Name : </label>
         <label className="py-4">Addres : </label>
         <label className="py-1.5">Note : </label>
         </div>
-        <div className=" flex flex-col py-2 pl-3 w-8/12 md:w-10/12 ">
+        <div className=" flex flex-col py-2 w-8/12">
         <input
-           className="border-2"
+           className="border"
             type="text"
             name="name_customer"
            defaultValue={props.name_customer}
@@ -152,7 +153,7 @@ function Details ({dataid, props}) {
           <input className="opacity-0 w-0"  name="total" onChange={() => setTotal({total})} defaultValue={props.total = total} type="text" readOnly="readonly" required/>
         
           <input
-           className="border-2"
+           className="border"
             type="text"
             name="addres"
            defaultValue={props.addres}
@@ -160,7 +161,7 @@ function Details ({dataid, props}) {
           /><input className="opacity-0 w-0"  name="size" defaultValue={(props.size = size)} type="text"  readOnly="readonly" placeholder={size} required />
       
           <input
-           className="border-2"
+           className="border"
             type="text"
             name="note"
            defaultValue={props.note}
@@ -171,9 +172,9 @@ function Details ({dataid, props}) {
         
         
         {/* <Link href={'/pembayaran/' + dataid._id} key={dataid._id}><a> */}
-       
-        {/* <div className="bg-[#f5eddc] flex  w-full mx-auto p-2 my-2 rounded-xl text-sm sm:text-base justify-center "><button type="submit"  onChange={() => setTotal({total})}> {"Rp."+total.toLocaleString()}</button></div> */}
-        </form></div>
+       </div>
+        <div className="bg-[#f5eddc]  flex w-full mx-auto p-2 my-2 rounded-xl text-sm sm:text-base justify-center "><button type="submit"  onChange={() => setTotal({total})}> {"Rp."+total.toLocaleString()}</button></div>
+        </form>
         {/* </a></Link> */}
         </div>
         
