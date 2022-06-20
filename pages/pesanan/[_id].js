@@ -117,12 +117,12 @@ function Details ({dataid, props}) {
       ))}
     </Swiper>
         </div>
-        <div className="h-30 md:relative md:h-96 text-xs md:font-['serif'] mr-2 w-6/12">
+        <div className="h-30 md:relative  text-xs mr-2 w-6/12">
         <div className="flex flex-col md:flex-row w-full">
         <div className='flex w-1/6'><span> Product:</span> </div><div className="flex w-full md:text-right md:justify-end">{dataid.name_product}</div>
         </div>
         <div className="flex flex-col md:flex-row w-full py-5">
-        <div className='flex w-1/6 '><span> Description:</span> </div><div className="flex w-full md:text-right md:justify-end"><p>{dataid.desc}</p></div>
+        <div className='flex w-1/6 '><span> Description:</span> </div><div className="flex w-full md:text-right md:justify-end whitespace-pre-line"><p>{dataid.desc}</p></div>
         </div>
         <div className="flex flex-row w-full py-5">
         <div className='flex w-1/6 '><span> Size: {size} </span> </div>
@@ -134,7 +134,7 @@ function Details ({dataid, props}) {
         </div>
         </div>
         <div>
-        <form className=" w-full" method="POST">
+        <form className=" w-full flex flex-col " method="POST">
         {/* <p>{size}</p> */}
         <div className=" py-2">
         <label >Name : </label>
@@ -171,7 +171,7 @@ function Details ({dataid, props}) {
         
         {/* <Link href={'/pembayaran/' + dataid._id} key={dataid._id}><a> */}
        
-        <div className="bg-[#f5eddc] flex  w-full mx-auto p-2 my-2 rounded-xl text-sm sm:text-base justify-center md:absolute md:inset-x-0 "><button type="submit"  onChange={() => setTotal({total})}> {"Rp."+total.toLocaleString()}</button></div>
+        <div className="bg-[#f5eddc] flex  w-full mx-auto p-2 my-2 rounded-xl text-sm sm:text-base justify-center "><button type="submit"  onChange={() => setTotal({total})}> {"Rp."+total.toLocaleString()}</button></div>
         </form></div>
         {/* </a></Link> */}
         </div>
