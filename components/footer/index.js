@@ -14,8 +14,8 @@ const Footer = () => {
             <div className="text-sm text-center">
               <h5 className="font-bold uppercase"> Follow </h5>
               <ul className="flex-col gap-4 sm:flex-row items-center">
-                <li className="flex gap-2 pb-2"> <i className="fa fa-shopping-bag">  Nawawi's Boutique </i></li>
-                <li className="flex gap-2 pb-2">  <i  className="fab fa-instagram">  Nawawi's Boutique </i></li>
+                <li className="flex gap-2 pb-2"> <i className="fa fa-shopping-bag"/>  Nawawi's Boutique</li>
+                <li className="flex gap-2 pb-2">  <i  className="fab fa-instagram"/>  Nawawi's Boutique </li>
               </ul>
             </div>
             <div className="text-sm text-center sm:text-left">
