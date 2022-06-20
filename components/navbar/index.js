@@ -41,22 +41,22 @@ function Navbar() {
         <div className="flex flex-row items-center mx-20 justify-between w-full">
         <div className="items-center mx-7 md:mx-16  justify-between w-full font-['serif']">
         <Link href='/'>
-                  <a className="cursor-pointer hover:bg-gray-500 text-black hover:text-white px-1 py-1 text-xs md:px-3 md:py-2 rounded-md md:text-sm font-medium" >
+                  <a className="cursor-pointer hover:bg-gray-500 text-black hover:text-white px-2 py-1 text-xs md:px-3 md:py-2 rounded-md md:text-sm font-medium" >
                   <span>New Arrival</span>
                   </a>
                 </Link>
                 <Link href='/'>
-                  <a className="cursor-pointer hover:bg-gray-500 text-black hover:text-white px-1 py-1 text-xs md:px-3 md:py-2 rounded-md md:text-sm font-medium" >
+                  <a className="cursor-pointer hover:bg-gray-500 text-black hover:text-white px-2 py-1 text-xs md:px-3 md:py-2 rounded-md md:text-sm font-medium" >
                   <span>Best Seller</span>
                   </a>
                 </Link>
                 <Link href={'/type/suit'} key={'suit'}>
-                  <a className="cursor-pointer hover:bg-gray-500 text-black hover:text-white px-1 py-1 text-xs md:px-3 md:py-2 rounded-md md:text-sm font-medium" >
+                  <a className="cursor-pointer hover:bg-gray-500 text-black hover:text-white px-2 py-1 text-xs md:px-3 md:py-2 rounded-md md:text-sm font-medium" >
                   <span>Suit</span>
                   </a>
                 </Link>
                 <Link href={'/type/dress'} key={'dress'}>
-                  <a className="cursor-pointer hover:bg-gray-500 text-black hover:text-white px-1 py-1 text-xs md:px-3 md:py-2 rounded-md md:text-sm font-medium" >
+                  <a className="cursor-pointer hover:bg-gray-500 text-black hover:text-white px-2 py-1 text-xs md:px-3 md:py-2 rounded-md md:text-sm font-medium" >
                   <span>Dress</span>
                   </a>
                 </Link>
@@ -66,7 +66,7 @@ function Navbar() {
                   </a>
                 </Link>
                 <Link href={'/type/blouse'} key={'blouse'}>
-                  <a className="cursor-pointer hover:bg-gray-500 text-black hover:text-white px-1 py-1 text-xs md:px-3 md:py-2 rounded-md md:text-sm font-medium" >
+                  <a className="cursor-pointer hover:bg-gray-500 text-black hover:text-white px-2 py-1 text-xs md:px-3 md:py-2 rounded-md md:text-sm font-medium" >
                   <span>Blouse</span>
                   </a>
                 </Link>

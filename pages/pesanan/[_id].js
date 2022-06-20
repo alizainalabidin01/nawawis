@@ -122,7 +122,7 @@ function Details ({dataid, props}) {
         <div className='flex w-1/6'><span> Product:</span> </div><div className="flex w-full md:text-right md:justify-end">{dataid.name_product}</div>
         </div>
         <div className="flex flex-col md:flex-row w-full py-5">
-        <div className='flex w-1/6 '><span> Description:</span> </div><div className="flex w-full md:text-right md:justify-end"><p>{dataid.desc.replace(/\\n/g, '\n')}</p></div>
+        <div className='flex w-1/6 '><span> Description:</span> </div><div className="flex w-full md:text-right md:justify-end"><p>{dataid.desc}</p></div>
         </div>
         <div className="flex flex-row w-full py-5">
         <div className='flex w-1/6 '><span> Size: {size} </span> </div>
