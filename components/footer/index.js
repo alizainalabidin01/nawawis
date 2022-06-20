@@ -6,18 +6,11 @@ const Footer = () => {
         <div className="flex flex-col bg-[#f3f1ed] p-8 sm:flex-row">
           <div className="flex flex-col gap-5 items-center text-center sm:gap-10 sm:items-start sm:flex-row">
             <div className="mx-8">
-              
+              <Link href="/">
                 <span className="w-24"> Nawawis Boutique</span>
-           
+              </Link>
             </div>
   
-            <div className="text-sm text-center">
-              <h5 className="font-bold uppercase"> Follow </h5>
-              <ul className="flex-col gap-4 sm:flex-row items-center">
-              <li className="flex gap-2 pb-2"> <i className="fa fa-shopping-bag"><Link href="https://shopee.co.id/nawawis.boutique?smtt=0.131462281-1654134687.9">  Nawawi's Boutique </Link></i></li>
-                <li className="flex gap-2 pb-2">  <i className="fab fa-instagram"><Link href="https://instagram.com/nawawis.boutique?igshid=YmMyMTA2M2Y=">  Nawawi's Boutique </Link></i></li>
-              </ul>
-            </div>
             <div className="text-sm text-center sm:text-left">
               <h5 className="font-bold uppercase"> Help </h5>
               <ul className="flex-col text-center items-start sm:text-left sm:items-center">
