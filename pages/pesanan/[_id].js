@@ -118,11 +118,11 @@ function Details ({dataid, props}) {
     </Swiper>
         </div>
         <div className="h-30 md:relative  text-xs  w-3/5  md:w-6/12">
-        <div className="flex flex-col pr-1 md:flex-row w-full">
-        <div className='flex w-1/6'><span> Product:</span> </div><div className="flex w-full md:text-right md:justify-end">{dataid.name_product}</div>
+        <div className="flex flex-col pr-1  w-full">
+        <div className='flex w-1/6'><span> Product:</span> </div><div className="flex w-full  ">{dataid.name_product}</div>
         </div>
-        <div className="flex flex-col pr-1 md:flex-row w-full py-5">
-        <div className='flex w-1/6 '><span> Description:</span> </div><div className="flex w-full md:text-right md:justify-end whitespace-pre-line"><p>{dataid.desc}</p></div>
+        <div className="flex flex-col pr-1  w-full py-5">
+        <div className='flex w-1/6 '><span> Description:</span> </div><div className="flex w-full   whitespace-pre-line"><p>{dataid.desc}</p></div>
         </div>
         <div className="flex flex-row w-full py-5">
         <div className='flex w-1/6 '><span> Size: {size} </span> </div>

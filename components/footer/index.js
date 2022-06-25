@@ -15,7 +15,7 @@ const Footer = () => {
               <h5 className="font-bold uppercase"> Follow </h5>
               <ul className="flex-col gap-4 sm:flex-row items-center">
                 <li className="flex gap-2 pb-2 "> 
-                <i className="fa fa-shopping-bag"></i>
+                <img src="/images/shopee.png" className="w-auto h-4" />
                   <span><Link className='list-none' href="https://shopee.co.id/nawawis.boutique?smtt=0.131462281-1654134687.9"> 
                   <a className='list-none'> {"Nawawi's Boutique"}</a> 
                   </Link></span></li>
@@ -39,11 +39,12 @@ const Footer = () => {
           <div className="flex-auto mt-10 pl-4 text-sm sm:mt-0">
             <h5 className="font-bold uppercase text-center"> Payment Methods </h5>
             <div className="flex flex-wrap justify-center mt-5 gap-2 sm:gap-7">
-              <img src="/images/bca.png" className="w-auto h-5" />
+              <img src="/images/jenius.png" className="w-auto h-5 fill-black " />
               <img src="/images/bri.png" className="w-auto h-5" />
               <img src="/images/dana.png" className="w-auto h-5" />
               <img src="/images/line.png" className="w-auto h-5" />
               <img src="/images/shopeepay.png" className="w-auto h-5" />
+              <img src="/images/cimb.png" className="w-auto h-5" />
             </div>
           </div>
         </div>
