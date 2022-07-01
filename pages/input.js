@@ -73,7 +73,7 @@ function Add ({props}){
     data.append("upload_preset", "nawawisProduct");
     try {
       const uploadRes = await axios.post(
-        "https://api.cloudinary.com/v1_1/dbofxpqui/image/upload", 
+        "https://api.cloudinary.com/v1_1/dp3l7tywm/image/upload", 
         data
       );
 

@@ -114,10 +114,10 @@ function Details ({dataorder, props}) {
     const data = new FormData();
     console.log("..............."+img);
     data.append("file", img);
-    data.append("upload_preset", "nawawis");
+    data.append("upload_preset", "nawawisPay");
     try {
       const uploadRes = await axios.post(
-        "https://api.cloudinary.com/v1_1/dbofxpqui/image/upload", 
+        "https://api.cloudinary.com/v1_1/dp3l7tywm/image/upload", 
         data
       );
 
@@ -156,7 +156,7 @@ function Details ({dataorder, props}) {
         <div className=" py-3">
           <label >Choose an image </label><br></br>
           <input className="w-full"  type="file" onChange={(e) => setImg(e.target.files[0])} />
-          <button onClick={handlePay}  className="bg-[#52411e] mt-1 px-1 py-1 text-white"> Upload bukti pembayaran</button>
+          <button onClick={handlePay}  className="bg-[#52411e] mt-1 px-1 py-1 text-white hover:bg-[#f5eddc] hover:text-black"> Upload bukti pembayaran</button>
         </div>
         
         <form method="POST" name="imgPay">
