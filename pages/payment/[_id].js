@@ -167,7 +167,7 @@ function Details ({dataorder, props}) {
         
         </div>
         
-        <div className="bg-fuchsia-100 p-6 mt-3">
+        {/* <div className="bg-fuchsia-100 p-6 mt-3">
         <h2 className="font-semibold mb-2">Metode Pembayaran</h2>
         <p className="font-normal text-xs">
           - CIMB NIAGA : 706926281100  A/N TUTUT IRYANA DEVI <br/>
@@ -177,7 +177,7 @@ function Details ({dataorder, props}) {
           - SHOPEEPAY : 088989319606  A/N nawawi's.boutique <br/><br/>
           Note: Harap pastikan nomor dan nama penerima sesuai dengan yang tertera diatas.
         </p>
-        </div>
+        </div> */}
         
         </section>
         
