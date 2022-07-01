@@ -164,17 +164,17 @@ function Details ({dataorder, props}) {
         <div  className="bg-[#f5eddc] flex flex-row w-full mx-auto p-2 my-2 rounded-xl text-sm sm:text-base justify-center md:absolute md:inset-x-0 bottom-0"><button > verivikasi pembayaran</button></div>
         </form>
         </div>
-        
+       
         </div>
         
         <div className="bg-fuchsia-100 p-6 mt-3 font-normal text-xs">
         <h2 className="font-semibold mb-2">Metode Pembayaran</h2>
-        <p>CIMB NIAGA : 706926281100  A/N TUTUT IRYANA DEVI</p>
-        <p>BRI : 614301019224536  A/N TUTUT IRYANA DEVI </p>
-        <p>BTPN : 90200194182  A/N TUTUT IRYANA DEVI </p> 
-        <p>DANA : 081354181920  A/N TUTUT IRYANA DEVI </p>
-        <p>SHOPEEPAY : 088989319606  A/N nawawi's.boutique </p> <br/>
-        <p>Note: Harap pastikan nomor dan nama penerima sesuai dengan yang tertera diatas.</p>
+        <p>- CIMB NIAGA : 706926281100  A/N TUTUT IRYANA DEVI</p>
+        <p>- BRI : 614301019224536  A/N TUTUT IRYANA DEVI </p>
+        <p>- BTPN : 90200194182  A/N TUTUT IRYANA DEVI </p> 
+        <p>- DANA : 081354181920  A/N TUTUT IRYANA DEVI </p>
+        <p>- SHOPEEPAY : 088989319606  A/N nawawi's.boutique </p> 
+        <p> Note: Harap pastikan nomor dan nama penerima sesuai dengan yang tertera diatas.</p>
         </div>
         
         </section>
