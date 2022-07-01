@@ -130,7 +130,7 @@ function Details ({dataorder, props}) {
   }
     return(
         <MainLayout>
-        <section className="py-3">
+        <section className="pt-3">
         <div className="flex flex-row w-full ">
         
         <div className="h-30 md:h-96 w-6/12 gap-2 mx-6 ">
@@ -165,6 +165,18 @@ function Details ({dataorder, props}) {
         </form>
         </div>
         
+        </div>
+        
+        <div className="bg-fuchsia-100 p-6 mt-3">
+        <h2 className="font-semibold mb-2">Metode Pembayaran</h2>
+        <p className="font-normal text-xs">
+          - CIMB NIAGA : 706926281100 ( A/N TUTUT IRYANA DEVI )<br/>
+          - BRI : 614301019224536 ( A/N TUTUT IRYANA DEVI )<br/>
+          - BTPN : 90200194182 ( A/N TUTUT IRYANA DEVI )<br/> 
+          - DANA : 081354181920 ( A/N TUTUT IRYANA DEVI )<br/>
+          - SHOPEEPAY : 088989319606 ( A/N nawawi's.boutique )<br/><br/>
+          Note: Harap pastikan nomor dan nama penerima sesuai dengan yang tertera diatas.
+        </p>
         </div>
         
         </section>

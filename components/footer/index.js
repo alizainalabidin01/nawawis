@@ -42,7 +42,6 @@ const Footer = () => {
               <img src="/images/jenius.png" className="w-auto h-5 fill-black " />
               <img src="/images/bri.png" className="w-auto h-5" />
               <img src="/images/dana.png" className="w-auto h-5" />
-              <img src="/images/line.png" className="w-auto h-5" />
               <img src="/images/shopeepay.png" className="w-auto h-5" />
               <img src="/images/cimb.png" className="w-auto h-5" />
             </div>
