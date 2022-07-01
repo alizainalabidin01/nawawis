@@ -170,11 +170,11 @@ function Details ({dataorder, props}) {
         <div className="bg-fuchsia-100 p-6 mt-3">
         <h2 className="font-semibold mb-2">Metode Pembayaran</h2>
         <p className="font-normal text-xs">
-          - CIMB NIAGA : 706926281100 ( A/N TUTUT IRYANA DEVI )<br/>
-          - BRI : 614301019224536 ( A/N TUTUT IRYANA DEVI )<br/>
-          - BTPN : 90200194182 ( A/N TUTUT IRYANA DEVI )<br/> 
-          - DANA : 081354181920 ( A/N TUTUT IRYANA DEVI )<br/>
-          - SHOPEEPAY : 088989319606 ( A/N nawawi's.boutique )<br/><br/>
+          - CIMB NIAGA : 706926281100  A/N TUTUT IRYANA DEVI <br/>
+          - BRI : 614301019224536  A/N TUTUT IRYANA DEVI <br/>
+          - BTPN : 90200194182  A/N TUTUT IRYANA DEVI <br/> 
+          - DANA : 081354181920  A/N TUTUT IRYANA DEVI <br/>
+          - SHOPEEPAY : 088989319606  A/N nawawi's.boutique <br/><br/>
           Note: Harap pastikan nomor dan nama penerima sesuai dengan yang tertera diatas.
         </p>
         </div>
