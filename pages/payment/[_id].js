@@ -19,7 +19,7 @@ export const getServerSideProps = async ({params, req, res}) => {
   const id = data._id
   if (req.method === "POST") {
    await getBody(req, res);
-   const statuss = "pembayaran sedang di verivikasi"
+   const statuss = "pembayaran sedang di verifikasi"
    const imgurl = req.body.url
    const pay = ({
             imgPay: imgurl,
