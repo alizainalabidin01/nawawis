@@ -47,12 +47,18 @@ export default function verificationt({ dataPay }) {
                 <div className='flex h-96 w-full'>
                     <img className="object-contain" src={item.imgPay} />
                 </div>
-              
+              <div className='flex flex-row justify-between w-full'>
+              <div className='flex flex-col'>
               <p>{item.name_product.substring(0, 26)}</p>
-              <div className=" flex flex-row w-min  my-2 rounded-xl text-xs ">
+              <p className=" py-2  text-xs ">
                 {'Rp.' + item.total.toLocaleString()}
+                </p>
                 </div>
-               
+                <div className='flex'>
+                <img className=" h-14" src={item.product_img} />
+                
+                </div>
+                </div>
                   <input
                     className="opacity-0 h-0"
                     name="id"
