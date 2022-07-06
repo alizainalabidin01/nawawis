@@ -37,7 +37,7 @@ export default function verificationt({ dataPay }) {
   return (
     <MainLayout>
     <div>
-      <h1 className='p-2 text-lg'>Verifikasi Pembayaran</h1>
+      <h1 className='p-2 text-lg text-center'>Verifikasi Pembayaran</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-4 gap-11 justify-center">
         {dataPay.map((item) => 
           // eslint-disable-next-line react/jsx-key 
