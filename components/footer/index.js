@@ -25,6 +25,9 @@ const Footer = () => {
                   <span ><Link className='text-sm ' href="https://instagram.com/nawawis.boutique?igshid=YmMyMTA2M2Y=">  
                   <a className='list-none'>{"Nawawi's Boutique"}</a> 
                   </Link></span></li>
+                  <li className="flex gap-2 pb-2">  
+                <i  className="fab fa-whatsapp" ></i>
+                  <span > 081354181920</span></li>
               </ul>
             </div>
             <div className="text-sm text-center sm:text-left">
