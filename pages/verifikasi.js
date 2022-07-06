@@ -50,7 +50,7 @@ export default function verificationt({ dataPay }) {
               
               <p>{item.name_product.substring(0, 26)}</p>
               <div className=" flex flex-row w-min  my-2 rounded-xl text-xs ">
-                {'Rp.' + item.total}
+                {'Rp.' + item.total.toLocaleString()}
                 </div>
                
                   <input
