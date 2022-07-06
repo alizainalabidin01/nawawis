@@ -27,7 +27,9 @@ const Footer = () => {
                   </Link></span></li>
                   <li className="flex gap-2 pb-2">  
                 <i  className="fab fa-whatsapp" ></i>
-                  <span > 081354181920</span></li>
+                  <span > <Link className='text-sm ' href="https://wa.me/+6281354181920">  
+                  <a className='list-none'>{"081354181920"}</a> 
+                  </Link></span></li>
               </ul>
             </div>
             <div className="text-sm text-center sm:text-left">
