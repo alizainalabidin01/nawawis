@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "gambar": "/images/i1.jpg",
+    "title": "ORDER NOW",
+    "slogan": "Dapatkan Bonus Menarik",
+    "link": "https://shopee.co.id/nawawis.boutique?smtt=0.131462281-1654134687.9"
+  },
+  {
+    "id": 2,
+    "gambar": "/images/i2.jpg",
+    "title": "ORDER NOW",
+    "slogan": "Dapatkan Bonus Menarik",
+    "link": "https://shopee.co.id/nawawis.boutique?smtt=0.131462281-1654134687.9"
+  }
+  ,
+  {
+    "id": 2,
+    "gambar": "/images/i3.jpg",
+    "title": "ORDER NOW",
+    "slogan": "Dapatkan Bonus Menarik",
+    "link": "https://shopee.co.id/nawawis.boutique?smtt=0.131462281-1654134687.9"
+  }
+]

@@ -4,7 +4,7 @@ import dbConnect from "../utils/mongo";
 import bodyParser from "body-parser";
 import { promisify } from "util";
 import products from "../models/product";
-
+import Slider from "../components/slider1";
 
 const getBody = promisify(bodyParser.urlencoded());
 
@@ -49,8 +49,6 @@ function Add ({props}){
   const [price, setPrices] = useState([]);
   const [new1, setNew] = useState([]);
   props=new1
-  // const [extraCategory, setExtraCategory] = useState([]);
-  // const [extra, setExtra] = useState(null);
 
   const changePrice = (e, index) => {
     const currentPrices = price;
@@ -58,13 +56,7 @@ function Add ({props}){
     setPrices(currentPrices);
   };
 
-  // const handleExtraInput = (e) => {
-  //   setExtra({ ...extra, [e.target.name]: e.target.value });
-  // };
-
-  // const handleExtra = (e) => {
-  //   setExtraCategory((prev) => [...prev, extra]);
-  // };
+ 
   
   const handleImage = async () => {
     const data = new FormData();
@@ -85,30 +77,11 @@ function Add ({props}){
     }
   }
 
-  // const handleCreate = async () => {
-  //     const newProduct = {
-  //       name_product,
-  //       desc,
-  //       price,
-  //       type,
-  //       // extraCategory,
-  //       img: imgUrl,
-  //     };
 
-  //     await axios.post("http://localhost:3000/api", newProduct);
-  //     setImg(''),
-  //     setImgUrl(''),
-  //     setDesc(''),
-  //     setNameProduct(''),
-  //     setPrices(''),
-  //     setType('')
-  //     alert("data berhasil dimasukan")
-  // };
 
   return (
-    <div >
-      <div >
-       
+      <div className="flex flex-row">
+        <div className="flex-initial w-1/2">
         <h1>Add a new Product</h1>
         <div className="px-3 py-3">
           <label >Choose an image </label><br></br>
@@ -206,8 +179,11 @@ function Add ({props}){
         <input className="opacity-0" name="imgUrl" defaultValue={props.imgUrl = imgUrl[0]}  readOnly="readonly"/>
         <input className="opacity-0" name="imgUrl1" defaultValue={props.imgUrl1 = imgUrl[1]}  readOnly="readonly"/>
         </form>
+        </div>
+        
+       <Slider/>
       </div>
-    </div>
+   
   );
 };
 
